@@ -32,10 +32,17 @@ public class BJ_1935 {
                 double op2 = stack[--top];
 
                 switch (c) {
-                    case '+' -> stack[top++] = op1 + op2;
-                    case '-' -> stack[top++] = op2 - op1;
-                    case '*' -> stack[top++] = op1 * op2;
-                    case '/' -> stack[top++] = op2 / op1;
+                    case '+':
+                        stack[top++] = op1+op2;
+                        break;
+                    case '-':
+                        stack[top++] = op2-op1;
+                        break;
+                    case '*':
+                        stack[top++] = op1*op2;
+                        break;
+                    case '/':
+                        stack[top++] = op2/op1;
                 }
             }
         }
