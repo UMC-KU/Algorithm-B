@@ -1,4 +1,4 @@
-//22.04.10
+//22.04.21
 /*
 자연수 n개가 주어진다. 이 자연수의 공약수를 모두 구하는 프로그램을 작성하시오.
  */
@@ -35,22 +35,21 @@ public class BJ_5618 {
             gcd = gcd(num[2], gcd);
         }
 
-//        ArrayList<Integer> result = new ArrayList();
+        ArrayList<Integer> result = new ArrayList();
         int count=0, i=1;
-        for (i=1; i<=gcd; i++) {
+        for (i=1; i*i<=gcd; i++) {
             if (gcd%i==0) {
-                bw.write(i+"\n");
-//                result.add(count,i);
-//                result.add(++count, gcd/i);
+                result.add(count,i);
+                if (i==gcd/i) {
+                    break;
+                }
+                result.add(++count, gcd/i);
             }
         }
-//        if (gcd%i==0) {
-//            result.add(count, i);
-//        }
-//
-//        for (int j:result) {
-//            bw.write(j+"\n");
-//        }
+
+        for (int j:result) {
+            bw.write(j+"\n");
+        }
         bw.flush();
         bw.close();
     }
